@@ -4,6 +4,7 @@ Student hobby project that changes the color of kasa smart light led strip based
 
 ## Disclaimer
 At the moment the Spotipy API codes must be inputted done manually (This will be changed in the future)
+
 Kasa devices seem to go unresponsive if too many requests are made (Looking into this) if you run into this problem a device reset might be nessecary, hold the power button for 10 seconds and re-setup your device from the Kasa app
 
 ## Setup
