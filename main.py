@@ -1,5 +1,7 @@
 import threading
 import tkinter as tk
+from tkinter import ttk
+import sv_ttk
 import asyncio
 import colorsys
 import requests
@@ -143,25 +145,27 @@ def create_ui():
     root = tk.Tk()
     root.title("Spotify LED Controller")
 
-    status_label = tk.Label(root, text="Status: Not running")
+    sv_ttk.set_theme("dark")
+
+    status_label = ttk.Label(root, text="Status: Not running")
     status_label.pack(pady=10)
 
     # Create and pack the device name entry
-    label = tk.Label(root, text="Enter device name:")
+    label = ttk.Label(root, text="Enter device name:")
     label.pack()
-    entry = tk.Entry(root)
+    entry = ttk.Entry(root)
     entry.pack()
 
     # Create and pack the discover button
-    discover_button = tk.Button(root, text="Discover", command=lambda: on_discover_button_click(entry, status_label, start_button))
+    discover_button = ttk.Button(root, text="Discover", command=lambda: on_discover_button_click(entry, status_label, start_button))
     discover_button.pack(pady=10)
 
     # Create and pack the start button (disabled by default)
-    start_button = tk.Button(root, text="Start", state=tk.DISABLED, command=lambda: start_program(status_label, device_ip))
+    start_button = ttk.Button(root, text="Start", state=tk.DISABLED, command=lambda: start_program(status_label, device_ip))
     start_button.pack(pady=10)
 
     # Create and pack the stop button
-    stop_button = tk.Button(root, text="Stop", command=lambda: stop_program(status_label))
+    stop_button = ttk.Button(root, text="Stop", command=lambda: stop_program(status_label))
     stop_button.pack(pady=10)
 
     root.mainloop()
